@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reading</title>
+       <h1> </h1>
+       <link rel="stylesheet" href="stil.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+    </head>
+<body>
+    <h1>Today's reading  </h1> 
+    <br>
+
+
+   <!-- <i class="fas fa-star spinning-star"></i>  Star icon with animation 
+    <i class="fas fa-star spinning-star"></i> <!-- Star icon with animation 
+    <i class="fas fa-star spinning-star"></i> <!-- Star icon with animation 
+    <i class="fas fa-star spinning-star"></i> <!-- Star icon with animation 
+    <i class="fas fa-star spinning-star"></i> <!-- Star icon with animation 
+    <i class="fas fa-star spinning-star"></i> <!-- Star icon with animation 
+    <i class="fas fa-star spinning-star"></i> <!-- Star icon with animation -->
+    <p> What's in the cards? </p> 
+    <i class="fas fa-cloud"></i> <!-- Cloud icon -->
+    <i class="fas fa-star"></i>  <!-- Star icon -->
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-moon"></i>
+    
+    <p style="color:#fba4d6;">Let's see:</p>
+
+
+    
+    <input id="input" type="text">
+
+    <br>
+    <br>
+    <button onclick="myFunction()">Click click</button>
+
+   
+    <br>
+    <br>
+    <p id="kortNavn"> The meaning is:
+    </p>
+
+    <p id="betydning"></p>
+
+    <p id="hei"></p>
+
+    <script>
+
+        const wands = {
+            ace: 'Courage, desire, positivity, new projects',
+            two: 'waiting for results, make a choice, travel plans',
+            three: 'teamwork, commerce, expansion, travel',
+            four: 'homecoming, celebrations, family/friends, reunion', 
+            five: 'rivalry, challenges, obstacles, sport',
+            six: 'victory, award, recognition, good news, success',
+            seven: 'self defence, protect against, competition',
+            eight: 'travel, movement, communications',
+            nine: 'keeping & maintaining boundaries, persistance',
+            ten: 'stress, exhaustion, too many burdens, responsibilities',
+            page: 'an active kid, a new project or creative idea, chance, growth, pressure',
+            knight: 'a lusty and free spirited person, creativity, motivation, self-confidence',
+            queen: 'a feisty person, confidence, self-assurance, pride, selfishness',
+            king: 'a bold leader, charm, courage, wamth, strength',
+        }
+
+        const cups = {
+            ace: 'new baby or relationship, proposal, marriage',
+            two : 'romantic love, partnership, proposal, marriage',
+            three: 'friendship, celebrations, a circle of support',
+            four: 'apathy, feeling unfulfilled, surprise gifts',
+            five: 'loss, regret, grief, feeling abandoned or unloved',
+            six: 'nostalgia, gifts, innocence, reunions',
+            seven: 'too many choices, communicate issues',
+            eight: 'withdrawal, retreat, moving on, abandonment',
+            nine: 'wishes come true, material abundance, good health',
+            ten: 'family, contentment, total love and support',
+            page: 'a studious kid, new love, volunteer work, opportunity',
+            knight: 'a prince(ss) charming, romance, proposals, well-being',
+            queen: 'a nurturing person, healing, support',
+            king: 'a supportive leader, tolerance, empathy',
+
+        }
+
+        const swords = {
+            ace: 'new ideas, new conflict, surgery, mental clarity',
+            two: 'time to compromise or make a decision',
+            three: 'heartbreak, divorce, loss, depression, surgery, grief',
+            four: 'retreat, rest, renewal, solitude, recovery',
+            five: 'bullies, theft, violence, unhealthy relationship',
+            six: 'a necessary transition, relocation, moving',
+            seven: 'theft, betrayal, dishonesty, running away, sneakiness',
+            eight: 'overthinking, entrapment, self-criticism',
+            nine: 'nightmares, anxiety, grief, depression',
+            ten: 'complete and painful ending, rock bottom, back-stabbing',
+            page: 'a curious kid, gossip, spies, truth, adventure',
+            knight: 'a fast talking person, lifestyle change',
+            queen: 'a self-sufficient person, total honesty',
+            king: 'In intentinal leader, strategic thought',
+            
+        }
+
+        const pentacles = {
+            ace: 'new job, raise, investment, new income',
+            two: 'two choices, multi-tasking, weighing many options',
+            three: 'teamwork, collaboration, skill, quality, craftmanship',
+            four: 'greed or desire for long term security',
+            five: 'poverty, ill health, worry, isolation, financial loss',
+            six: 'giving or receiving help, generosity',
+            seven:'patience, hard work, delayed success, waiting',
+            eight: 'learning, hard work, inexperience, ignorance',
+            nine: 'luxury, selfsufficience, financial gain, solo pleasures',
+            ten: 'leaving a legacy, retirement, inheritance',
+            page: 'a patient kid, a new job or raise, money news, ambition',
+            knight: 'a reliable person, hard work, stability, security',
+            queen: 'a resourceful person, fertility, domesticity',
+            king: 'a solid and practical leader, wise investor, abundance',
+
+        }
+
+        const major_arcana = {
+            fool: 'fresh hope, take chances, take chances, new paths and adventures, beginnings',
+            magician: 'focused creativity, rurning visions into reality, inspired action',
+            priestess: 'secrets, mystery, intuition, trust yourself',
+            empress: 'fertility, creation, pregnancy, abundance, good parenting',
+            emperor: 'respect, leadership, strategic planning, a father figure',
+            hierophant: 'traditions, conventional expectations, conformity',
+            lovers: 'partnership, deeper love, a choice, the strength of two together, limits',
+            chariot: 'action and change, a journey, a new vehicle, movement',
+            strength: 'selv-love, unconditional love, self-respect, courage, in control',
+            hermit: 'inner wisdom, anquest for personal truth, spiritual illumination, solitude, loneliness',
+            fortune: 'good fortune, a turning point, gambeling, luck',
+            justice: 'cause and effect, win-win, solutions, the truth comes out',
+            hanged: 'wisdom, self-sacrifice, get a different perspective, burdens',
+            death: 'big changes, time to move on, rebirth, transformation, new beginnings',
+            temperance: 'balance, harmony, patience, self-control, moderation',
+            devil: 'addiction, greed, envy, materalism, obsession, lust, desires, deception',
+            tower: 'unwanted change, ruin, disgrace, upheaval, violence',
+            star: 'renewal, hope, inner clarity, miracles, have faith, being in the sunlight',
+            moon: 'unseen problems, voluntary changes, trust your intuition',
+            sun: 'material happiness, a joyous outcome, success',
+            judgement: 'clarity, a final decision, a wake-up call, your life´s purpose',
+            world: 'completing a goal or lesson, emigration, travel, completion',
+
+        }
+
+
+        
+
+        
+
+        function kort() {
+            let kortet = document.getElementById("input").value;
+            document.getElementById("kortNavn").innerHTML = "Kortet er: " + kortet;
+
+            document.getElementById("betydning").innerHTML = 'wands: ' + wands.two;
+
+            
+
+            }
+
+
+            
+
+
+
+
+
+            function myFunction() {
+    // Get the input value from the user
+    let kort = document.getElementById("input").value.toLowerCase();
+
+    // Create a new paragraph element
+    let newParagraph = document.createElement("p");
+
+    // Check which suit the card belongs to and find its meaning
+    if (kort.includes('wands')) {
+        for (let x in wands) {
+            if (kort.includes(x)) {
+                console.log(wands[x]);
+                newParagraph.textContent = wands[x];
+                document.getElementById("betydning").appendChild(newParagraph);
+                return;
+            }
+        }
+    } else if (kort.includes('cups')) {
+        for (let x in cups) {
+            if (kort.includes(x)) {
+                console.log(cups[x]);
+                newParagraph.textContent = cups[x];
+                document.getElementById("betydning").appendChild(newParagraph);
+                return;
+            }
+        }
+    } else if (kort.includes('swords')) {
+        for (let x in swords) {
+            if (kort.includes(x)) {
+                console.log(swords[x]);
+                newParagraph.textContent = swords[x];
+                document.getElementById("betydning").appendChild(newParagraph);
+                return;
+            }
+        }
+    } else if (kort.includes('pentacles')) {
+        for (let x in pentacles) {
+            if (kort.includes(x)) {
+                console.log(pentacles[x]);
+                newParagraph.textContent = pentacles[x];
+                document.getElementById("betydning").appendChild(newParagraph);
+                return;
+            }
+        }
+    } else {
+        for (let x in major_arcana) {
+            if (kort.includes(x)) {
+                console.log(major_arcana[x]);
+                newParagraph.textContent = major_arcana[x];
+                document.getElementById("betydning").appendChild(newParagraph);
+                return;
+            }
+        }
+    }
+
+    // If no match is found
+    console.log("Kort ikke funnet");
+    newParagraph.textContent = "Kort ikke funnet";
+    document.getElementById("betydning").appendChild(newParagraph);
+}
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

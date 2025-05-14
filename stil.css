@@ -1,0 +1,85 @@
+/* Apply a cute font and pink color scheme */
+
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ffe4e1; /* Light pink background */
+    color: #ff69b4; /* Hot pink text */
+    margin: 0;
+    padding: 50px;   
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ff1493; /* Deep pink for headings */
+    text-align: center;
+}
+
+a {
+    color: #ff69b4; /* Hot pink links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff1493; /* Deep pink on hover */
+    text-decoration: underline;
+}
+
+button {
+    background-color: #ff69b4; /* Hot pink button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: #ff1493; /* Deep pink on hover */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff0f5; /* Light pink container */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 180px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ff69b4; /* Hot pink border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+    
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff1493; /* Deep pink on focus */
+    box-shadow: 0 0 5px #ff1493;
+    
+}
+
+/* Define the spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply the animation to the star icon */
+.spinning-star {
+    font-size: 10px; /* Adjust size */
+    color: #fba4d6; /* Hot pink */
+    animation: spin 2s linear infinite; /* Spin continuously */
+}
