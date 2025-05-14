@@ -1,18 +1,17 @@
 /* Apply a cute font and pink color scheme */
 
-
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #ffe4e1; /* Light pink background */
     color: #ff69b4; /* Hot pink text */
     margin: 0;
-    padding: 50px;   
-
+    padding: 5%; /* Use percentage for padding to make it responsive */
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #ff1493; /* Deep pink for headings */
     text-align: center;
+    font-size: 2rem; /* Responsive font size */
 }
 
 a {
@@ -33,6 +32,10 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-family: inherit;
+    font-size: 1rem; /* Responsive font size */
+    width: 100%; /* Full width for smaller screens */
+    max-width: 300px; /* Limit max width */
+    display: block;
 }
 
 button:hover {
@@ -40,7 +43,7 @@ button:hover {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 90%; /* Adjust width for smaller screens */
     margin: 0 auto;
     padding: 20px;
     background-color: #fff0f5; /* Light pink container */
@@ -49,22 +52,21 @@ button:hover {
 }
 
 input {
-    width: 180px;
+    width: 100%; /* Full width for smaller screens */
+    max-width: 300px; /* Limit max width */
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ff69b4; /* Hot pink border */
     border-radius: 5px;
     box-sizing: border-box;
     font-family: inherit;
-    font-size: 16px;
-    
+    font-size: 1rem; /* Responsive font size */
 }
 
 input:focus {
     outline: none;
     border-color: #ff1493; /* Deep pink on focus */
     box-shadow: 0 0 5px #ff1493;
-    
 }
 
 /* Define the spinning animation */
@@ -79,7 +81,32 @@ input:focus {
 
 /* Apply the animation to the star icon */
 .spinning-star {
-    font-size: 10px; /* Adjust size */
+    font-size: 2rem; /* Adjust size */
     color: #fba4d6; /* Hot pink */
     animation: spin 2s linear infinite; /* Spin continuously */
+    display: block;
+    margin: 10px auto; /* Center the icon */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.5rem; /* Smaller font size for headings */
+    }
+
+    .container {
+        padding: 10px; /* Reduce padding */
+    }
+
+    button {
+        font-size: 0.9rem; /* Slightly smaller button text */
+    }
+
+    input {
+        font-size: 0.9rem; /* Slightly smaller input text */
+    }
+
+    .spinning-star {
+        font-size: 1.5rem; /* Smaller icon size */
+    }
 }
